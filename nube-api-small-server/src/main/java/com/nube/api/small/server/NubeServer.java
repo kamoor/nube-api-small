@@ -6,10 +6,9 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.context.embedded.MultiPartConfigFactory;
+import org.springframework.boot.context.embedded.MultipartConfigFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
@@ -47,7 +46,7 @@ public class NubeServer {
 	@Bean
 	MultipartConfigElement multipartConfigElement() {
 
-		MultiPartConfigFactory factory = new MultiPartConfigFactory();
+		MultipartConfigFactory factory = new MultipartConfigFactory();
 		factory.setMaxFileSize(fileMaxSize);
 		factory.setMaxRequestSize(fileMaxSize);
 		return factory.createMultipartConfig();
